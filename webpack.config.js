@@ -5,7 +5,7 @@ module.exports = {
   experiments: {
     asyncWebAssembly: true
   },
-  entry: "./src/index.jsx",
+  entry: "./src/frontend/index.jsx",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.[hash].js"
@@ -13,6 +13,9 @@ module.exports = {
   devServer: {
     compress: true,
     port: 8080,
+    proxy: {
+        '/api/**': 'http://localhost:8081'
+    },
     hot: true,
     static: './dist',
     historyApiFallback: true,
