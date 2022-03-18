@@ -8,7 +8,7 @@
     "start:frontend": "webpack serve",
     "start": "concurrently -k npm:start:frontend npm:start:backend",
     "build": "webpack build",
-    "test": "jest test",
+    "test": "npm run lint && jest test",
     "lint": "eslint"
   },
   "author": "",
